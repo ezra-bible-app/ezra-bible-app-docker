@@ -21,6 +21,6 @@ RUN npm install -g electron-packager
 RUN npm install -g electron-installer-debian
 RUN apt-get install -y unzip
 
-COPY build_ubuntu_1910.sh /build.sh
+COPY docker/build_ubuntu_1910.sh /build.sh
 
 ENTRYPOINT ["/build.sh"]
