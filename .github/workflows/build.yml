@@ -13,6 +13,7 @@ jobs:
         - uses: mr-smithers-excellent/docker-build-push@v3
           name: Build & push Docker image
           with:
+              dockerfile: Ubuntu1804_Dockerfile
               image: toklein/ezra-ubuntu-1804
               tag: latest
               registry: docker.io
@@ -29,6 +30,7 @@ jobs:
         - uses: mr-smithers-excellent/docker-build-push@v3
           name: Build & push Docker image
           with:
+              dockerfile: Ubuntu1904_Dockerfile
               image: toklein/ezra-ubuntu-1910
               tag: latest
               registry: docker.io
