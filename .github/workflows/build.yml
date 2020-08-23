@@ -71,23 +71,6 @@ jobs:
               username: ${{ secrets.DOCKER_USERNAME }}
               password: ${{ secrets.DOCKER_PASSWORD }}
 
-    build-mint19-image:
-        name: Build Docker Image for building Ezra Project on Mint 19
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v1
-          name: Check out
-
-        - uses: mr-smithers-excellent/docker-build-push@v3
-          name: Build & push Docker image
-          with:
-              dockerfile: docker/Mint19_Dockerfile
-              image: toklein/ezra-mint-19
-              tag: latest
-              registry: docker.io
-              username: ${{ secrets.DOCKER_USERNAME }}
-              password: ${{ secrets.DOCKER_PASSWORD }}
-
     build-buster-image:
         name: Build Docker Image for building Ezra Project on Debian 10 Buster
         runs-on: ubuntu-latest
@@ -151,6 +134,23 @@ jobs:
           with:
               dockerfile: docker/Fedora31_Dockerfile
               image: toklein/ezra-fedora31
+              tag: latest
+              registry: docker.io
+              username: ${{ secrets.DOCKER_USERNAME }}
+              password: ${{ secrets.DOCKER_PASSWORD }}
+
+    build-fedora32-image:
+        name: Build Docker Image for building Ezra Project on Fedora 32
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v1
+          name: Check out
+
+        - uses: mr-smithers-excellent/docker-build-push@v3
+          name: Build & push Docker image
+          with:
+              dockerfile: docker/Fedora32_Dockerfile
+              image: toklein/ezra-fedora32
               tag: latest
               registry: docker.io
               username: ${{ secrets.DOCKER_USERNAME }}
