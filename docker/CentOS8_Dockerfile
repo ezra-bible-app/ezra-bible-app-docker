@@ -14,7 +14,7 @@ RUN yum install -y python2
 RUN ln -s /usr/bin/python2 /usr/bin/python
 
 RUN yum install -y rpm-build
-RUN npm install -g electron-installer-redhat
+RUN npm install -g electron-installer-redhat@3.1.0
 
 COPY docker/build_centos8.sh /build.sh
 
