@@ -1,6 +1,6 @@
 # Dockerfile for OpenSuse Build Enviroment for Ezra Project
 
-FROM opensuse/leap:15.1
+FROM opensuse/leap:15.2
 
 RUN zypper --gpg-auto-import-keys refresh
 
