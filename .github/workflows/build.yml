@@ -20,23 +20,6 @@ jobs:
               username: ${{ secrets.DOCKER_USERNAME }}
               password: ${{ secrets.DOCKER_PASSWORD }}
 
-    build-ubuntu1910-image:
-        name: Build Docker Image for building Ezra Project on Ubuntu 19.10
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v1
-          name: Check out
-
-        - uses: mr-smithers-excellent/docker-build-push@v3
-          name: Build & push Docker image
-          with:
-              dockerfile: docker/Ubuntu1910_Dockerfile
-              image: toklein/ezra-ubuntu-1910
-              tag: latest
-              registry: docker.io
-              username: ${{ secrets.DOCKER_USERNAME }}
-              password: ${{ secrets.DOCKER_PASSWORD }}
-
     build-ubuntu2004-image:
       name: Build Docker Image for building Ezra Project on Ubuntu 20.04
       runs-on: ubuntu-latest
