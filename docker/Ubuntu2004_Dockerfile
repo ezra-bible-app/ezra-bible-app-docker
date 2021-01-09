@@ -27,6 +27,12 @@ RUN npm install -g electron-installer-debian
 RUN apt-get install -y unzip
 RUN apt-get install -y xvfb
 
+# Electron dependencies
+RUN apt-get install -y libatspi2.0-0 libdrm2 libgbm1 libgconf-2-4 libglib2.0-bin \
+                       libgtk2.0-0 libgtk-3-0 gvfs-bin libnotify4 libnss3 trash-cli \
+                       libbuuid1 libxcb-dri3-0 xdg-utils libxss1 libxtst6 \
+                       libicu66 zlib1g libsqlite3-0 libcurl3-gnutls
+
 RUN ln -s /usr/bin/python3 /usr/bin/python
 
 COPY docker/build_ubuntu_2004.sh /build.sh
