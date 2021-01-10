@@ -22,8 +22,9 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 RUN apt-get update
 RUN apt-get install -y nodejs
 
-RUN sudo npm install -g n
-RUN sudo n 10.19
+# Install node 10.19
+RUN npm install -g n
+RUN n 10.19
 
 RUN npm install -g electron-packager
 RUN npm install -g electron-installer-debian
