@@ -4,7 +4,7 @@ on: [ push ]
 
 jobs:
     build-ubuntu1804-image:
-        name: Build Docker Image for building Ezra Project on Ubuntu 18.04
+        name: Build Docker Image for building Ezra Bible App on Ubuntu 18.04
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v1
@@ -21,7 +21,7 @@ jobs:
               password: ${{ secrets.DOCKER_PASSWORD }}
 
     build-ubuntu2004-image:
-      name: Build Docker Image for building Ezra Project on Ubuntu 20.04
+      name: Build Docker Image for building Ezra Bible App on Ubuntu 20.04
       runs-on: ubuntu-latest
       steps:
       - uses: actions/checkout@v1
@@ -38,7 +38,7 @@ jobs:
             password: ${{ secrets.DOCKER_PASSWORD }}
 
     build-mint18-image:
-        name: Build Docker Image for building Ezra Project on Mint 18
+        name: Build Docker Image for building Ezra Bible App on Mint 18
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v1
@@ -55,7 +55,7 @@ jobs:
               password: ${{ secrets.DOCKER_PASSWORD }}
 
     build-buster-image:
-        name: Build Docker Image for building Ezra Project on Debian 10 Buster
+        name: Build Docker Image for building Ezra Bible App on Debian 10 Buster
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v1
@@ -72,7 +72,7 @@ jobs:
               password: ${{ secrets.DOCKER_PASSWORD }}
 
     build-centos8-image:
-        name: Build Docker Image for building Ezra Project on CentOS 8
+        name: Build Docker Image for building Ezra Bible App on CentOS 8
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v1
@@ -89,7 +89,7 @@ jobs:
               password: ${{ secrets.DOCKER_PASSWORD }}
 
     build-fedora29-image:
-        name: Build Docker Image for building Ezra Project on Fedora 29
+        name: Build Docker Image for building Ezra Bible App on Fedora 29
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v1
@@ -106,7 +106,7 @@ jobs:
               password: ${{ secrets.DOCKER_PASSWORD }}
 
     build-fedora31-image:
-        name: Build Docker Image for building Ezra Project on Fedora 31
+        name: Build Docker Image for building Ezra Bible App on Fedora 31
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v1
@@ -123,7 +123,7 @@ jobs:
               password: ${{ secrets.DOCKER_PASSWORD }}
 
     build-fedora32-image:
-        name: Build Docker Image for building Ezra Project on Fedora 32
+        name: Build Docker Image for building Ezra Bible App on Fedora 32
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v1
@@ -140,7 +140,7 @@ jobs:
               password: ${{ secrets.DOCKER_PASSWORD }}
 
     build-fedora33-image:
-        name: Build Docker Image for building Ezra Project on Fedora 33
+        name: Build Docker Image for building Ezra Bible App on Fedora 33
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v1
@@ -157,7 +157,7 @@ jobs:
               password: ${{ secrets.DOCKER_PASSWORD }}
 
     build-opensuseleap-image:
-        name: Build Docker Image for building Ezra Project on OpenSuse Leap
+        name: Build Docker Image for building Ezra Bible App on OpenSuse Leap
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v1

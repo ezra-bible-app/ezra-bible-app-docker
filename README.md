@@ -1,2 +1,2 @@
 # ezra-docker
-Docker images for building Ezra Project on various Linux distributions
+Docker images for building Ezra Bible App on various Linux distributions
