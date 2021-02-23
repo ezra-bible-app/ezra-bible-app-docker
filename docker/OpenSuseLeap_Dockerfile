@@ -11,7 +11,7 @@ RUN zypper install -y libcurl-devel libicu-devel sqlite3-devel
 RUN npm install -g n
 RUN n 10.19
 
-RUN npm install -g https://github.com/electron-userland/electron-installer-redhat/tarball/master
+RUN npm install -g electron-installer-redhat@3.3.0
 
 COPY docker/build_opensuseleap.sh /build.sh
 
