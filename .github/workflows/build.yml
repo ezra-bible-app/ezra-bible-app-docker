@@ -88,23 +88,6 @@ jobs:
               username: ${{ secrets.DOCKER_USERNAME }}
               password: ${{ secrets.DOCKER_PASSWORD }}
 
-    build-fedora29-image:
-        name: Build Docker Image for building Ezra Bible App on Fedora 29
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v1
-          name: Check out
-
-        - uses: mr-smithers-excellent/docker-build-push@v3
-          name: Build & push Docker image
-          with:
-              dockerfile: docker/Fedora29_Dockerfile
-              image: toklein/ezra-fedora29
-              tag: latest
-              registry: docker.io
-              username: ${{ secrets.DOCKER_USERNAME }}
-              password: ${{ secrets.DOCKER_PASSWORD }}
-
     build-fedora31-image:
         name: Build Docker Image for building Ezra Bible App on Fedora 31
         runs-on: ubuntu-latest
