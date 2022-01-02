@@ -7,7 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN sed -i -e 's/:\/\/(archive.ubuntu.com\|security.ubuntu.com)/old-releases.ubuntu.com/g' /etc/apt/sources.list
 
 RUN apt-get update
-RUN apt-get install -y dialog apt-utils build-essential libsword-dev libsqlite3-0 libcurl4-gnutls-dev libicu-dev \
+RUN apt-get install -y dialog apt-utils build-essential libsword-dev libsqlite3-0 libcurl4-gnutls-dev libicu-dev zlib1g-dev \
                        pkg-config icu-devtools subversion git vim sudo curl python3-software-properties software-properties-common lsb-release
 
 # Install latest CMake
