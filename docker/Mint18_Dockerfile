@@ -10,7 +10,17 @@ RUN apt-get -y install apt-utils
 RUN apt-get -y update
 
 RUN apt-get install -y dialog build-essential libsword-dev libsqlite3-0 libcurl4-gnutls-dev libicu-dev \
-                       pkg-config icu-devtools subversion git vim sudo curl python3-software-properties cmake
+                       pkg-config icu-devtools subversion git vim sudo curl python3-software-properties software-properties-common lsb-release
+
+# Install latest CMake
+# See https://askubuntu.com/questions/355565/how-do-i-install-the-latest-version-of-cmake-from-the-command-line
+RUN wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
+RUN apt-add-repository "deb https://apt.kitware.com/ubuntu/ $(lsb_release -cs) main"
+RUN apt-get update
+RUN apt-get install kitware-archive-keyring
+RUN rm /etc/apt/trusted.gpg.d/kitware.gpg
+RUN apt-get update
+RUN apt-get install cmake
 
 RUN apt-get install -y curl python3-software-properties
 RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
