@@ -19,7 +19,6 @@ RUN apt-get install -y libfuse2 wget
 
 RUN apt-get install -y curl python3-software-properties
 RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-RUN source ~/.bashrc
 # Install node 14.17.5
 RUN nvm install 14.17.5
 
