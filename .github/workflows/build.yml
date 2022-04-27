@@ -37,6 +37,23 @@ jobs:
             username: ${{ secrets.DOCKER_USERNAME }}
             password: ${{ secrets.DOCKER_PASSWORD }}
 
+    build-ubuntu2204-image:
+      name: Build Docker Image for building Ezra Bible App on Ubuntu 22.04
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v1
+        name: Check out
+
+      - uses: mr-smithers-excellent/docker-build-push@v3
+        name: Build & push Docker image
+        with:
+            dockerfile: docker/Ubuntu2204_Dockerfile
+            image: toklein/ezra-ubuntu-2204
+            tag: latest
+            registry: docker.io
+            username: ${{ secrets.DOCKER_USERNAME }}
+            password: ${{ secrets.DOCKER_PASSWORD }}
+
     build-mint18-image:
         name: Build Docker Image for building Ezra Bible App on Mint 18
         runs-on: ubuntu-latest
