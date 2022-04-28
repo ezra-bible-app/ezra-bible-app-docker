@@ -4,6 +4,8 @@
 export NVM_DIR="/root/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
+git config --global --add safe.directory /github/workspace
+
 npm run build-linux
 npm run deb_2204
 cp release/packages/*.deb $GITHUB_WORKSPACE/ezra-bible-app_latest.deb
