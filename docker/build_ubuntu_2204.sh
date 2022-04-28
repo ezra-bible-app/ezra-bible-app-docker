@@ -1,7 +1,8 @@
 #!/bin/bash
 # This script triggers all the steps necessary for building and packaging Ezra Bible App on Linux.
 
-source /root/.bashrc
+export NVM_DIR="/root/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 npm run build-linux
 npm run deb_2204
