@@ -1,5 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 # This script triggers all the steps necessary for building and packaging Ezra Bible App on Linux.
+
+source /root/.bashrc
 
 npm run build-linux
 npm run deb_2204
