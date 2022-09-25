@@ -218,7 +218,7 @@ jobs:
           name: Build & push Docker image
           with:
               dockerfile: docker/OpenSuseLeap_Dockerfile
-              image: toklein/ezra-opensuse-leap-15.1
+              image: toklein/ezra-opensuse-leap-15.2
               tag: latest
               registry: docker.io
               username: ${{ secrets.DOCKER_USERNAME }}
