@@ -1,4 +1,4 @@
-# Dockerfile for Linux Mint 19.3 Build Enviroment for Ezra Bible App
+# Dockerfile for Linux Mint 21 Build Enviroment for Ezra Bible App
 
 FROM linuxmintd/mint21-amd64
 
