@@ -8,7 +8,7 @@ export PATH=$PATH:$HOME/.pyenv/bin
 pyenv install 3.10.0
 pyenv global 3.10.0
 pyenv exec python -m venv .venv
-source venv/bin/activate
+pyenv activate venv
 
 npm run build-linux
 npm run deb_bookworm
