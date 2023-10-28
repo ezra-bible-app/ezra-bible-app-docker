@@ -11,7 +11,8 @@ pyenv global 3.10.0
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-pyenv exec python -m venv .venv
+pyenv version
+pyenv virtualenv venv
 pyenv activate venv
 
 npm run build-linux
