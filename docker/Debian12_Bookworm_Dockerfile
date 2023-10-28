@@ -12,13 +12,6 @@ RUN apt-get install -y libssl-dev libbz2-dev \
 libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
 xz-utils tk-dev libffi-dev liblzma-dev
 
-# Install pyenv
-RUN curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
-
-# Install Python 3.10.0
-RUN /root/.pyenv/bin/pyenv install 3.10.0
-RUN /root/.pyenv/bin/pyenv global 3.10.0
-
 RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 RUN apt-get update
 RUN apt-get install -y nodejs npm
