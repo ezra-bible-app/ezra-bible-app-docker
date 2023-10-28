@@ -8,6 +8,16 @@ RUN apt-get update
 RUN apt-get install -y dialog apt-utils build-essential libsword-dev libsqlite3-0 libcurl4-gnutls-dev libicu-dev zlib1g-dev \
                        pkg-config icu-devtools subversion git vim sudo curl python3-software-properties cmake
 
+RUN apt-get install -y libssl-dev libbz2-dev \
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+xz-utils tk-dev libffi-dev liblzma-dev
+
+# Install pyenv
+RUN curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
+
+# Install Python 3.10.0
+RUN pyenv install 3.10.0
+
 RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 RUN apt-get update
 RUN apt-get install -y nodejs npm
