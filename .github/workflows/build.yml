@@ -3,23 +3,6 @@ name: Build Docker image
 on: [ push ]
 
 jobs:
-    build-ubuntu1804-image:
-        name: Build Docker Image for building Ezra Bible App on Ubuntu 18.04
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v1
-          name: Check out
-
-        - uses: mr-smithers-excellent/docker-build-push@v3
-          name: Build & push Docker image
-          with:
-              dockerfile: docker/Ubuntu1804_Dockerfile
-              image: toklein/ezra-ubuntu-1804
-              tag: latest
-              registry: docker.io
-              username: ${{ secrets.DOCKER_USERNAME }}
-              password: ${{ secrets.DOCKER_PASSWORD }}
-
     build-ubuntu2004-image:
       name: Build Docker Image for building Ezra Bible App on Ubuntu 20.04
       runs-on: ubuntu-latest
@@ -53,23 +36,6 @@ jobs:
             registry: docker.io
             username: ${{ secrets.DOCKER_USERNAME }}
             password: ${{ secrets.DOCKER_PASSWORD }}
-
-    build-mint18-image:
-        name: Build Docker Image for building Ezra Bible App on Mint 18
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v1
-          name: Check out
-
-        - uses: mr-smithers-excellent/docker-build-push@v3
-          name: Build & push Docker image
-          with:
-              dockerfile: docker/Mint18_Dockerfile
-              image: toklein/ezra-mint-18
-              tag: latest
-              registry: docker.io
-              username: ${{ secrets.DOCKER_USERNAME }}
-              password: ${{ secrets.DOCKER_PASSWORD }}
 
     build-mint21-image:
         name: Build Docker Image for building Ezra Bible App on Mint 21
