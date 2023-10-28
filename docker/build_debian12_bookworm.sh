@@ -3,6 +3,8 @@
 
 # Use Python 3.10.0, because with 3.11 there are issues with node-gyp
 # See https://stackoverflow.com/questions/74715990/node-gyp-err-invalid-mode-ru-while-trying-to-load-binding-gyp
+export PATH=$PATH:/root/.pyenv/bin
+pyenv virtualenv-init -
 pyenv local 3.10.0
 
 npm run build-linux

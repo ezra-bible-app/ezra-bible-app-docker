@@ -16,7 +16,7 @@ xz-utils tk-dev libffi-dev liblzma-dev
 RUN curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
 
 # Install Python 3.10.0
-RUN pyenv install 3.10.0
+RUN /root/.pyenv/bin/pyenv install 3.10.0
 
 RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 RUN apt-get update
