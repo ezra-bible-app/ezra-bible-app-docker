@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # This script triggers all the steps necessary for building and packaging Ezra Bible App on Linux.
 
 # Use Python 3.10.0, because with 3.11 there are issues with node-gyp
