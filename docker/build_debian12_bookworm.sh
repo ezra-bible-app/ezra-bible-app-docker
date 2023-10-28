@@ -7,6 +7,8 @@ curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv
 export PATH=$PATH:$HOME/.pyenv/bin
 pyenv install 3.10.0
 pyenv global 3.10.0
+pyenv exec python -m venv .venv
+source venv/bin/activate
 
 npm run build-linux
 npm run deb_bookworm
