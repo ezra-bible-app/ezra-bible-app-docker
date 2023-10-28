@@ -17,6 +17,7 @@ RUN curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/p
 
 # Install Python 3.10.0
 RUN /root/.pyenv/bin/pyenv install 3.10.0
+RUN /root/.pyenv/bin/pyenv global 3.10.0
 
 RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 RUN apt-get update
