@@ -19,8 +19,8 @@ RUN apt-get install -y libfuse2 wget
 
 RUN apt-get install -y curl python3-software-properties
 RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-# Install node 14.17.5
-RUN export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && nvm install 14.17.5 && \
+# Install node 16.16.0
+RUN export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && nvm install 16.16.0 && \
     npm install -g electron-packager electron-installer-debian
 
 RUN apt-get install -y unzip
