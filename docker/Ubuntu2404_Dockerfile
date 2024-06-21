@@ -18,10 +18,7 @@ RUN apt-get install -y dialog build-essential libsword-dev libsqlite3-0 libcurl4
 RUN apt-get install -y libfuse2 wget
 
 RUN apt-get install -y curl python3-software-properties
-RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-# Install node 16.16.0
-RUN export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && nvm install 16.16.0 && \
-    npm install -g electron-packager electron-installer-debian
+RUN apt-get install nodejs npm
 
 RUN apt-get install -y unzip
 RUN apt-get install -y xvfb
