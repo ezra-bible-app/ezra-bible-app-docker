@@ -1,0 +1,33 @@
+# Dockerfile for Ubuntu 22.04 Build Enviroment for Ezra Bible App
+
+FROM ubuntu:24.04
+
+ARG HOST_USER
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get -y update
+RUN apt-get -y dist-upgrade
+RUN apt-get -y install apt-utils
+RUN apt-get -y update
+
+RUN apt-get install -y dialog build-essential libsword-dev libsqlite3-0 libcurl4-gnutls-dev libicu-dev zlib1g-dev \
+                       pkg-config icu-devtools subversion git vim sudo curl python3-software-properties cmake
+
+# AppImage dependencies
+RUN apt-get install -y libfuse2 wget
+
+RUN apt-get install -y curl python3-software-properties
+RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+# Install node 14.17.5
+RUN export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && nvm install 14.17.5 && \
+    npm install -g electron-packager electron-installer-debian
+
+RUN apt-get install -y unzip
+RUN apt-get install -y xvfb
+
+RUN ln -s /usr/bin/python3 /usr/bin/python
+
+COPY docker/build_ubuntu_2404.sh /build.sh
+
+ENTRYPOINT ["/build.sh"]
