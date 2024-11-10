@@ -4,7 +4,7 @@ FROM opensuse/leap:15.2
 
 RUN zypper --gpg-auto-import-keys refresh
 
-RUN zypper install -y sudo gcc-c++ make vim git subversion cmake nodejs nodejs-devel npm rpm-build unzip curl
+RUN zypper install -y sudo gcc-c++ make vim git subversion cmake rpm-build unzip curl wget
 RUN zypper install -y libcurl-devel libicu-devel sqlite3-devel zlib-devel
 
 RUN wget https://nodejs.org/dist/v18.18.0/node-v18.18.0.tar.gz
