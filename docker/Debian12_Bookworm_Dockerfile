@@ -18,8 +18,8 @@ RUN apt-get update
 RUN apt-get install -y nodejs npm
 
 # Install node 18.18.0
-RUN npm install -g n
-RUN n 18.18.0
+#RUN npm install -g n
+#RUN n 18.18.0
 
 RUN npm install -g electron-packager
 RUN npm install -g electron-installer-debian
