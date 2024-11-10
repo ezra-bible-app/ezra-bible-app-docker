@@ -13,14 +13,11 @@ RUN n 18.18.0
 RUN yum -y install epel-release
 RUN dnf group install -y "Development Tools"
 
-RUN yum install -y libsqlite3x-devel.x86_64 libicu-devel libcurl-devel zlib-devel subversion unzip cmake
-
-RUN yum install -y python2
-RUN ln -s /usr/bin/python2 /usr/bin/python
+RUN yum install -y libsqlite3x-devel.x86_64 libicu-devel libcurl-devel zlib-devel subversion unzip cmake python
 
 RUN yum install -y rpm-build
 RUN npm install -g electron-installer-redhat@3.0.0
 
-COPY docker/build_centos8.sh /build.sh
+COPY docker/build_centos9.sh /build.sh
 
 ENTRYPOINT ["/build.sh"]
