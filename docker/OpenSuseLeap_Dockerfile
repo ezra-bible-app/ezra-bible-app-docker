@@ -7,9 +7,9 @@ RUN zypper --gpg-auto-import-keys refresh
 RUN zypper install -y sudo gcc-c++ make vim git subversion cmake nodejs nodejs-devel npm rpm-build unzip curl
 RUN zypper install -y libcurl-devel libicu-devel sqlite3-devel zlib-devel
 
-# Install node 14.17.5
+# Install node 18.18.0
 RUN npm install -g n
-RUN n 14.17.5
+RUN n 18.18.0
 
 RUN npm install -g electron-installer-redhat@3.3.0
 

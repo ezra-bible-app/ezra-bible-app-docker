@@ -17,13 +17,13 @@ RUN bash kitware-archive.sh
 RUN apt-get update
 RUN apt-get install -y cmake
 
-RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+RUN curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 RUN apt-get update
 RUN apt-get install -y nodejs
 
-# Install node 14.17.5
+# Install node 18.18.0
 RUN npm install -g n
-RUN n 14.17.5
+RUN n 18.18.0
 
 RUN npm install -g electron-packager
 RUN npm install -g electron-installer-debian
