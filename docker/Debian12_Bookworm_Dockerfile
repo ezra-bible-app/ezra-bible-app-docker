@@ -15,7 +15,7 @@ xz-utils tk-dev libffi-dev liblzma-dev
 
 RUN curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 RUN apt-get update
-RUN apt-get install -y nodejs npm
+RUN apt-get install -y nodejs
 
 # Install node 18.18.0
 #RUN npm install -g n
