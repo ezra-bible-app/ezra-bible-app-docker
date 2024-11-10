@@ -7,9 +7,14 @@ RUN zypper --gpg-auto-import-keys refresh
 RUN zypper install -y sudo gcc-c++ make vim git subversion cmake rpm-build unzip curl wget
 RUN zypper install -y libcurl-devel libicu-devel sqlite3-devel zlib-devel
 
+RUN wget https://cdn.opensuse.org/update/leap/15.2/oss_debug/x86_64/gcc10-obj-c++-debuginfo-10.2.1+git583-lp152.4.1.x86_64.rpm
+RUN rpm -i gcc10-obj-c++-debuginfo-10.2.1+git583-lp152.4.1.x86_64.rpm
+
 RUN wget https://nodejs.org/dist/v18.18.0/node-v18.18.0.tar.gz
 RUN tar xvfz node-v18.18.0.tar.gz
-RUN cd node-v18.18.0 && ./configure && make && make install
+RUN cd node-v18.18.0 && ./configure
+RUN cd node-v18.18.0 && make
+RUN cd node-v18.18.0 && make install
 
 # Install node 14.17.5
 #RUN npm install -g n
