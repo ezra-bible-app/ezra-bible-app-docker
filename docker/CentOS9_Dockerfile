@@ -1,6 +1,6 @@
 # Dockerfile for CentOS 9 Build Enviroment for Ezra Bible App
 
-FROM centos:9
+FROM dokken/centos-stream-9:latest
 
 RUN yum update -y
 RUN yum install -y sudo
