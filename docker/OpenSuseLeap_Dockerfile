@@ -8,6 +8,7 @@ RUN zypper install -y sudo gcc-c++ make vim git subversion cmake rpm-build unzip
 RUN zypper install -y libcurl-devel libicu-devel sqlite3-devel zlib-devel
 RUN zypper install -y nodejs npm
 
+RUN npm install -g electron-packager
 RUN npm install -g electron-installer-redhat@3.3.0
 
 COPY docker/build_opensuseleap.sh /build.sh
