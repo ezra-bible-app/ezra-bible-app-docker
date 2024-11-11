@@ -11,6 +11,7 @@ RUN zypper install -y sudo gcc-c++ make vim git subversion cmake rpm-build unzip
 RUN zypper install -y libcurl-devel libicu-devel sqlite3-devel zlib-devel
 RUN zypper install -y nodejs npm
 RUN zypper install -y python310
+RUN rm /usr/bin/python3 && ln -s /usr/bin/python3.10 /usr/bin/python3
 RUN zypper install -y gcc13-c++
 
 RUN npm install -g electron-packager
