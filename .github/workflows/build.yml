@@ -242,7 +242,7 @@ jobs:
               username: ${{ secrets.DOCKER_USERNAME }}
               password: ${{ secrets.DOCKER_PASSWORD }}
 
-    build-opensuseleap15.5-image:
+    build-opensuseleap15-5-image:
         name: Build Docker Image for building Ezra Bible App on OpenSuse Leap 15.5
         runs-on: ubuntu-latest
         steps:
@@ -259,7 +259,7 @@ jobs:
               username: ${{ secrets.DOCKER_USERNAME }}
               password: ${{ secrets.DOCKER_PASSWORD }}
 
-    build-opensuseleap15.6-image:
+    build-opensuseleap15-6-image:
         name: Build Docker Image for building Ezra Bible App on OpenSuse Leap 15.6
         runs-on: ubuntu-latest
         steps:
