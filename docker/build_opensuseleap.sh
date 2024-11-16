@@ -18,6 +18,9 @@ npm run build-linux
 npm run rpm_opensuse_leap
 cp release/packages/*.rpm $GITHUB_WORKSPACE/ezra-bible-app_latest.rpm
 
+echo "Package creation done. Listing package dependencies:"
+rpm -qpR $GITHUB_WORKSPACE/ezra-bible-app_latest.rpm
+
 if [ "$GITHUB_EVENT_NAME" = "release" ]; then
   node_modules/.bin/sentry-cli --auth-token $SENTRY_TOKEN \
     upload-dif -o tobias-klein -p ezra-bible-app \
