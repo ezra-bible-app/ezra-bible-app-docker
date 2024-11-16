@@ -9,10 +9,8 @@ git clone https://github.com/electron-userland/electron-installer-redhat release
 git -C release/electron-installer-redhat checkout 0ca955
 
 # Remove dependency to atspi in case of OpenSuse 15.6
-if grep -q 15.6 "/etc/os-release"; then
-  echo "Removing atspi dependency in electron-installer-redhat/src/dependencies.js"
-  sed -i '/atspi/d' release/electron-installer-redhat/src/dependencies.js
-fi
+echo "Removing atspi dependency in electron-installer-redhat/src/dependencies.js"
+sed -i '/atspi/d' release/electron-installer-redhat/src/dependencies.js
 
 npm install --prefix release/electron-installer-redhat
 
