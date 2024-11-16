@@ -1,7 +1,7 @@
 #!/bin/sh
 # This script triggers all the steps necessary for building and packaging Ezra Bible App on Linux.
 
-mkdir release/electron-installer-redhat
+mkdir -p release/electron-installer-redhat
 git clone https://github.com/electron-userland/electron-installer-redhat release/electron-installer-redhat
 npm install --prefix release/electron-installer-redhat
 
