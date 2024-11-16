@@ -3,6 +3,11 @@
 
 mkdir -p release/electron-installer-redhat
 git clone https://github.com/electron-userland/electron-installer-redhat release/electron-installer-redhat
+
+# Use specific version of electron-installer-redhat that adds support for OpenSuse 15.6 in terms of dependency setup
+# See https://github.com/electron-userland/electron-installer-redhat/commit/0ca95554b2bdacd24da7942f459709df41336972
+git -C release/electron-installer-redhat checkout 0ca955
+
 npm install --prefix release/electron-installer-redhat
 
 npm run build-linux
