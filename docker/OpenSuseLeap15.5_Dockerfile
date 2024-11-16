@@ -15,7 +15,6 @@ RUN rm /usr/bin/python3 && ln -s /usr/bin/python3.10 /usr/bin/python3
 RUN zypper install -y gcc13-c++
 
 RUN npm install -g electron-packager
-RUN npm install -g electron-installer-redhat
 RUN npm install -g pug-cli
 
 COPY docker/build_opensuseleap.sh /build.sh
