@@ -1,6 +1,6 @@
 # Dockerfile for Debian 13 Build Enviroment for Ezra Bible App
 
-FROM debian:13
+FROM debian:trixie
 
 ENV DEBIAN_FRONTEND=noninteractive
 
