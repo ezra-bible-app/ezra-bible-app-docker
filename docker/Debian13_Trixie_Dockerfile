@@ -1,0 +1,30 @@
+# Dockerfile for Debian 13 Build Enviroment for Ezra Bible App
+
+FROM debian:13
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update
+RUN apt-get install -y dialog apt-utils build-essential libsword-dev libsqlite3-0 libcurl4-gnutls-dev libicu-dev zlib1g-dev \
+                       pkg-config icu-devtools subversion git vim sudo curl python3-software-properties cmake
+
+# pyenv dependencies
+RUN apt-get install -y libssl-dev libbz2-dev \
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+xz-utils tk-dev libffi-dev liblzma-dev
+
+RUN curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+RUN apt-get update
+RUN apt-get install -y nodejs
+
+# Install node 18.18.0
+#RUN npm install -g n
+#RUN n 18.18.0
+
+RUN npm install -g electron-packager
+RUN npm install -g electron-installer-debian
+RUN apt-get install -y unzip
+
+COPY docker/build_debian13_trixie.sh /build.sh
+
+ENTRYPOINT ["/build.sh"]
