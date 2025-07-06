@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update
 RUN apt-get install -y dialog apt-utils build-essential libsword-dev libsqlite3-0 libcurl4-gnutls-dev libicu-dev zlib1g-dev \
-                       pkg-config icu-devtools subversion git vim sudo curl python3-software-properties cmake
+                       pkg-config icu-devtools subversion git vim sudo curl cmake
 
 # pyenv dependencies
 RUN apt-get install -y libssl-dev libbz2-dev \
