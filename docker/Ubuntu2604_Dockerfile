@@ -1,0 +1,19 @@
+# Build environment for Ezra Bible App on Ubuntu 26.04 LTS
+FROM ubuntu:26.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        build-essential libsword-dev libsqlite3-dev libcurl4-gnutls-dev \
+        libicu-dev zlib1g-dev pkg-config icu-devtools subversion git curl \
+        ca-certificates cmake unzip python3 python3-setuptools nodejs npm && \
+    rm -rf /var/lib/apt/lists/*
+
+# Match the Node.js version used by Ezra's .nvmrc.
+RUN npm install -g n && n 22.22.2 && \
+    npm install -g electron-installer-debian@4.0.0
+
+COPY docker/build_ubuntu_2604.sh /build.sh
+
+ENTRYPOINT ["/bin/bash", "/build.sh"]
