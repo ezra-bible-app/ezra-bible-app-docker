@@ -12,9 +12,9 @@ RUN curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 RUN apt-get update
 RUN apt-get install -y nodejs
 
-# Install node 18.18.0
+# Install node 22.22.2
 RUN npm install -g n
-RUN n 18.18.0
+RUN n 22.22.2
 
 RUN npm install -g electron-packager
 RUN npm install -g electron-installer-debian
