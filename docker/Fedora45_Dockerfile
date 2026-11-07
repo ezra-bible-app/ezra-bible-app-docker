@@ -1,0 +1,16 @@
+# Build environment for Ezra Bible App on Fedora 45
+FROM fedora:45
+
+RUN dnf install -y \
+        gcc-c++ make git subversion cmake rpm-build unzip curl \
+        libcurl-devel libicu-devel sqlite-devel zlib-ng-compat-devel \
+        nodejs22 nodejs22-npm python3.14 && \
+    dnf clean all
+
+# Match the Node.js version used by Ezra's .nvmrc.
+RUN npm install -g n && n 22.22.2
+ENV npm_config_python=/usr/bin/python3.14
+
+COPY docker/build_fedora45.sh /build.sh
+
+ENTRYPOINT ["/bin/bash", "/build.sh"]
