@@ -9,7 +9,12 @@ RUN zypper -n --no-gpg-checks refresh -f
 
 RUN zypper install -y sudo gcc-c++ make vim git subversion cmake rpm-build unzip curl wget
 RUN zypper install -y libcurl-devel libicu-devel sqlite3-devel zlib-devel
-RUN zypper install -y nodejs npm
+RUN zypper install -y npm
+
+RUN sudo curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+RUN export NVM_DIR="$HOME/.nvm"
+RUN nvm install 22
+
 RUN zypper install -y python310
 RUN rm /usr/bin/python3 && ln -s /usr/bin/python3.10 /usr/bin/python3
 RUN zypper install -y gcc13-c++
