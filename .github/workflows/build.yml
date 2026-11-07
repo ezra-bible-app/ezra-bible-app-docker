@@ -259,6 +259,23 @@ jobs:
               username: ${{ secrets.DOCKER_USERNAME }}
               password: ${{ secrets.DOCKER_PASSWORD }}
 
+    build-opensuseleap16-1-image:
+        name: Build Docker Image for building Ezra Bible App on openSUSE Leap 16.1
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v1
+          name: Check out
+
+        - uses: mr-smithers-excellent/docker-build-push@v3
+          name: Build & push Docker image
+          with:
+              dockerfile: docker/OpenSuseLeap16.1_Dockerfile
+              image: toklein/ezra-opensuse-leap-16.1
+              tag: latest
+              registry: docker.io
+              username: ${{ secrets.DOCKER_USERNAME }}
+              password: ${{ secrets.DOCKER_PASSWORD }}
+
 #    build-opensuseleap15-5-image:
 #        name: Build Docker Image for building Ezra Bible App on OpenSuse Leap 15.5
 #        runs-on: ubuntu-latest
@@ -292,4 +309,3 @@ jobs:
 #              registry: docker.io
 #              username: ${{ secrets.DOCKER_USERNAME }}
 #              password: ${{ secrets.DOCKER_PASSWORD }}
-

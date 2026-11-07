@@ -1,0 +1,15 @@
+# Build environment for Ezra Bible App on openSUSE Leap 16.1
+FROM opensuse/leap:16.1
+
+RUN zypper --non-interactive refresh && \
+    zypper --non-interactive install \
+        sudo gcc-c++ make vim git subversion cmake rpm-build unzip curl wget \
+        libcurl-devel libicu-devel sqlite3-devel zlib-devel \
+        nodejs24 npm24 python3
+
+# Match the Node.js version used by Ezra's .nvmrc; Leap 16.1 ships Node.js 24.
+RUN npm install -g n && n 22.22.2
+
+COPY docker/build_opensuseleap16.1.sh /build.sh
+
+ENTRYPOINT ["/bin/bash", "/build.sh"]
